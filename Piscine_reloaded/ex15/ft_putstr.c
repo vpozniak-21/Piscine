@@ -1,18 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tafanasi <tafanasi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 00:04:43 by tafanasi          #+#    #+#             */
-/*   Updated: 2024/10/07 00:04:54 by tafanasi         ###   ########.fr       */
+/*   Created: 2024/11/30 10:59:05 by rkobelie          #+#    #+#             */
+/*   Updated: 2024/11/30 11:19:02 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+//#include <stdio.h>
 
-void	ft_putchar(char b)
+void	ft_putchar(char b);
+
+void	ft_putstr(char *str)
 {
-	write(1, &b, 1);
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
 }
+/*
+int	main(void)
+{
+	char	*str = "Fuck the patriarchy";
+
+	ft_putstr(str);
+	return (0);
+}
+*/

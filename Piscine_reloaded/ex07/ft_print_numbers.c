@@ -1,18 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tafanasi <tafanasi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vpozniak <vpozniak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 00:04:43 by tafanasi          #+#    #+#             */
-/*   Updated: 2024/10/07 00:04:54 by tafanasi         ###   ########.fr       */
+/*   Created: 2024/11/28 16:41:25 by vpozniak          #+#    #+#             */
+/*   Updated: 2024/11/28 16:57:03 by vpozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+void	ft_putchar(char b);
 
-void	ft_putchar(char b)
+void	ft_print_numbers(void)
 {
-	write(1, &b, 1);
+	int	a;
+
+	a = '0';
+	while (a <= '9')
+	{
+		ft_putchar(a);
+		a++;
+	}
 }
+/*
+int	main(void)
+{
+	ft_print_numbers ();
+	return (0);
+}
+*/
