@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
+/*   By: vpozniak <vpozniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 18:55:14 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/12/02 20:46:22 by rkobelie         ###   ########.fr       */
+/*   Created: 2024/12/02 18:53:48 by rkobelie          #+#    #+#             */
+/*   Updated: 2024/12/07 14:46:36 by vpozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include <strings.h>
+
+void	bzero(void *s, size_t n)
 {
-	int i;
-	i = 0;
-	while (str[i])
+	size_t i;
+	i =0;
+	unsigned char *moving_pointer;
+	moving_pointer = (unsigned char *)s;
+	while( i < n)
 	{
+		moving_pointer[i] = '\0';
 		i++;
 	}
-	return (i);
+
 }

@@ -6,37 +6,37 @@
 /*   By: vpozniak <vpozniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 10:30:59 by vpozniak          #+#    #+#             */
-/*   Updated: 2024/12/05 12:56:43 by vpozniak         ###   ########.fr       */
+/*   Updated: 2024/12/06 13:19:39 by vpozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
+//#include <string.h>
 
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
 	i = 0;
+	while (s[i])
 	{
-		while (s[i])
+		if (s[i] == (char)c)
 		{
-			if (s[i] == c)
-			{
-				return ((char *)s);
-			}
-			s++;
+			return ((char *)(s + i));
 		}
-		if (c == '\0')
-		{
-			return ((char *)s);
-		}
+		s++;
+	}
+	if ((char)c == '\0')
+	{
+		return ((char *)(s + i));
 	}
 	return (0);
 }
 
 /*
-int	main(void) {
-	const char *test_str = "Hello, World!";
+int	main(void)
+{
+const char *test_str = "Hello, World!";
 
 	// Test cases for ft_strchr
 	printf("Testing ft_strchr:\n");

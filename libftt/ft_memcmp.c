@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
+/*   By: vpozniak <vpozniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 18:54:06 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/12/02 20:20:32 by rkobelie         ###   ########.fr       */
+/*   Created: 2024/12/02 18:54:35 by rkobelie          #+#    #+#             */
+/*   Updated: 2024/12/07 15:04:31 by vpozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include <string.h>
+
+int	memcmp(const void *s1, const void *s2, size_t n)
 {
-	if (c >= 0 && c <= 127)
+	size_t  i;
+	i = 0;
+	while(i < n)
 	{
-		return (1);
+		if(((unsigned char *)s1)[i] != ((unsigned char *)s2)[i])
+			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
+		i++;
 	}
-	return (0);
+	return(0);
 }

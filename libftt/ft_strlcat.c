@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpozniak <vpozniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/05 12:59:07 by vpozniak          #+#    #+#             */
-/*   Updated: 2024/12/05 13:00:31 by vpozniak         ###   ########.fr       */
+/*   Created: 2024/12/02 18:55:05 by rkobelie          #+#    #+#             */
+/*   Updated: 2024/12/06 22:17:59 by vpozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 
-char	*ft_strchr(const char *s, int c)
+size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int	i;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
+	j = 0;
+	while( dst[i] && i < size)
 	{
-		while (s[i])
-		{
-			if (s[i] == c)
-			{
-				return ((char *)s);
-			}
-			s++;
-		}
-		if (c == '\0')
-		{
-			return ((char *)s);
-		}
+		i++;
 	}
-	return (0);
+	while (src[j] && (i + j + 1) < size)
+	{
+		dst[i + j] = src[j];
+		j++;
+	}
+	if (i < size)
+		dst[i + j] = '\0';
+	return (i + ft_strlen(src));
 }
+
