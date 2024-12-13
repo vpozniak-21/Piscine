@@ -6,11 +6,11 @@
 /*   By: vpozniak <vpozniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:55:10 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/12/06 18:53:21 by vpozniak         ###   ########.fr       */
+/*   Updated: 2024/12/09 21:22:43 by vpozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

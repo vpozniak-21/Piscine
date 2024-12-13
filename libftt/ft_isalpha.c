@@ -6,11 +6,13 @@
 /*   By: vpozniak <vpozniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:53:57 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/12/06 13:29:34 by vpozniak         ###   ########.fr       */
+/*   Updated: 2024/12/11 10:11:17 by vpozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char c)
+#include "libft.h"
+
+int	ft_isalpha(int c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 	{

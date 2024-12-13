@@ -6,13 +6,15 @@
 /*   By: vpozniak <vpozniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:55:33 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/12/06 22:29:25 by vpozniak         ###   ########.fr       */
+/*   Updated: 2024/12/11 10:33:24 by vpozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int c)
+#include "libft.h"
+
+int	ft_toupper(int c)
 {
-	if( c >= 97 && c <= 122)
-		return(c - 32);
-	return(c);
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	return (c);
 }

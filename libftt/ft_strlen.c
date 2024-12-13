@@ -6,13 +6,16 @@
 /*   By: vpozniak <vpozniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:55:14 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/12/06 13:30:29 by vpozniak         ###   ########.fr       */
+/*   Updated: 2024/12/11 10:19:00 by vpozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-	int i;
+	size_t	i;
+
 	i = 0;
 	while (str[i])
 	{

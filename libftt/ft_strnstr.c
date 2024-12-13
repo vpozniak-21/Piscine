@@ -6,7 +6,7 @@
 /*   By: vpozniak <vpozniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:55:21 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/12/07 13:39:30 by vpozniak         ###   ########.fr       */
+/*   Updated: 2024/12/11 10:20:32 by vpozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,24 @@
 // Loop through big up to len characters and check for a match with little.
 // If a match is found, return a pointer to the first character of the match.
 // If no match is found, return NULL.
+//
+//
+/* Problems with these :
+5 check(ft_strnstr(empty, "", -1) == empty); showLeaks();
+6 check(ft_strnstr(empty, "", 0) == empty); showLeaks();
+*/
+#include "libft.h"
 
-#include <string.h>
-
-char	*strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-
-	if (big[0] == '\0' || len == 0)
-		return (NULL);
 	if (little[0] == '\0')
 		return ((char *)big);
-
+	if (len == 0)
+		return (NULL);
 	while (big[i] && i < len)
 	{
 		j = 0;
@@ -41,6 +44,5 @@ char	*strnstr(const char *big, const char *little, size_t len)
 		}
 		i++;
 	}
-
-	return NULL;
+	return (NULL);
 }

@@ -6,9 +6,11 @@
 /*   By: vpozniak <vpozniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:54:13 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/12/06 13:29:48 by vpozniak         ###   ########.fr       */
+/*   Updated: 2024/12/11 10:16:35 by vpozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

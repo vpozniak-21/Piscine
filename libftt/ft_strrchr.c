@@ -6,12 +6,11 @@
 /*   By: vpozniak <vpozniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 12:59:07 by vpozniak          #+#    #+#             */
-/*   Updated: 2024/12/06 13:26:44 by vpozniak         ###   ########.fr       */
+/*   Updated: 2024/12/09 21:23:16 by vpozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//#include <string.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

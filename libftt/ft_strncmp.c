@@ -6,11 +6,11 @@
 /*   By: vpozniak <vpozniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:55:18 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/12/06 22:09:11 by vpozniak         ###   ########.fr       */
+/*   Updated: 2024/12/09 21:22:55 by vpozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

@@ -6,13 +6,14 @@
 /*   By: vpozniak <vpozniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:53:42 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/12/06 23:26:33 by vpozniak         ###   ########.fr       */
+/*   Updated: 2024/12/11 10:11:00 by vpozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// The atoi() function converts the initial portion of the string pointed to by nptr to int
+// The atoi() function converts the initial portion of the
+//string pointed to by nptr to int
 
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
