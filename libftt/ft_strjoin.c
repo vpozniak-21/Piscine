@@ -6,7 +6,7 @@
 /*   By: vpozniak <vpozniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 10:55:27 by vpozniak          #+#    #+#             */
-/*   Updated: 2024/12/13 18:24:37 by vpozniak         ###   ########.fr       */
+/*   Updated: 2024/12/15 17:51:53 by vpozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,12 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*cat_str_ptr;
-	size_t	total_cat_length;
 	size_t	i;
 	size_t	j;
 
-	if (!s1)
-	{
-		return ((char *)s2);
-	}
-	if (!s2)
-	{
-		return ((char *)s1);
-	}
-	total_cat_length = ft_strlen(s1) + ft_strlen(s2);
-	cat_str_ptr = (char *)malloc((sizeof(char) * total_cat_length) + 1);
+	if (!s1 || !s2)
+		return (NULL);
+	cat_str_ptr = (char *)malloc((sizeof(char) * (ft_strlen(s1) + ft_strlen(s2))) + 1);
 	if (!cat_str_ptr)
 		return (NULL);
 	i = 0;
