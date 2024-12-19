@@ -6,7 +6,7 @@
 /*   By: vpozniak <vpozniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 22:05:37 by vpozniak          #+#    #+#             */
-/*   Updated: 2024/12/16 00:39:14 by vpozniak         ###   ########.fr       */
+/*   Updated: 2024/12/19 09:47:15 by vpozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,10 @@ char	*ft_itoa(int n)
 	}
 	while (--len >= 0 && str[len] != '-')
 	{
+
 		str[len] = (num % 10) + '0';
 		num /= 10;
+
 	}
 	return (str);
 }
@@ -60,10 +62,10 @@ char	*ft_itoa(int n)
 /*
 int	main(void)
 {
-	int		test_values[] = {0, 123, -123, 2147483647, -2147483648};
+	int		test_values[] = {0, 123, -123, 2147483647, -2147483648, -0};
 	char	*result;
 
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 6; i++)
 	{
 		result = ft_itoa(test_values[i]);
 		if (result)

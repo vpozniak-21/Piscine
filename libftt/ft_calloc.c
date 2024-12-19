@@ -6,25 +6,18 @@
 /*   By: vpozniak <vpozniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:53:51 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/12/11 10:18:04 by vpozniak         ###   ########.fr       */
+/*   Updated: 2024/12/19 08:04:42 by vpozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-void	*malloc(size_t size);
-void	free(void *ptr);
-*/
-/*
 size_t nmemb - the number of elements in the array;
 size_t size - the weight of each byte of each element within the array
 */
-#include "libft.h"
-/*#include <stdlib.h>
 #include <stdint.h>
-#include <stdio.h>
-#include <string.h>
+#include <string.h>// for srcpy in main
+#include "libft.h"
 
-*/
 void	ft_bzero(void *s, size_t n);
 
 void	*ft_calloc(size_t nmemb, size_t size)
@@ -45,64 +38,104 @@ void	*ft_calloc(size_t nmemb, size_t size)
 }
 
 /*
-int	main(void) {
-	void *original_ptr, *ft_ptr;
+int	main(void)
+{
 
-	// Case 1: Normal case
-	original_ptr = calloc(5, sizeof(int));
-	ft_ptr = ft_calloc(5, sizeof(int));
-	printf("Case 1: Normal allocation\n");
-	printf("Original: %p | ft_calloc: %p\n\n", original_ptr, ft_ptr);
-	free(original_ptr);
-	free(ft_ptr);
+    void *result;
 
-	// Case 2: Zero elements
-	original_ptr = calloc(0, sizeof(int));
-	ft_ptr = ft_calloc(0, sizeof(int));
-	printf("Case 2: Zero elements\n");
-	printf("Original: %p | ft_calloc: %p\n\n", original_ptr, ft_ptr);
-	free(original_ptr);
-	free(ft_ptr);
+    printf("Testing ft_calloc:\n");
 
-	// Case 3: Zero size
-	original_ptr = calloc(5, 0);
-	ft_ptr = ft_calloc(5, 0);
-	printf("Case 3: Zero size\n");
-	printf("Original: %p | ft_calloc: %p\n\n", original_ptr, ft_ptr);
-	free(original_ptr);
-	free(ft_ptr);
+    // Test 1: Normal allocation
+    result = ft_calloc(5, sizeof(int));
+    if (result)
+    {
+        printf("Test 1: ft_calloc(5, sizeof(int)) - Passed\n");
+        free(result);
+    }
+    else
+    {
+        printf("Test 1: ft_calloc(5, sizeof(int)) - Failed\n");
+    }
 
-	// Case 4: Large allocation
-	original_ptr = calloc(1000000, sizeof(int));
-	ft_ptr = ft_calloc(1000000, sizeof(int));
-	printf("Case 4: Large allocation\n");
-	printf("Original: %p | ft_calloc: %p\n\n", original_ptr, ft_ptr);
-	free(original_ptr);
-	free(ft_ptr);
+    // Test 2: Zero elements
+    result = ft_calloc(0, sizeof(int));
+    if (result == NULL)
+        printf("Test 2: ft_calloc(0, sizeof(int)) - Passed\n");
+    else
+    {
+        printf("Test 2: ft_calloc(0, sizeof(int)) - Failed\n");
+        free(result);
+    }
 
-	// Case 5: Maximum size_t value (overflow simulation)
-	original_ptr = calloc(SIZE_MAX, SIZE_MAX);  // Likely to fail, test NULL
-	ft_ptr = ft_calloc(SIZE_MAX, SIZE_MAX);
-	printf("Case 5: Maximum size_t value\n");
-	printf("Original: %p | ft_calloc: %p\n\n", original_ptr, ft_ptr);
-	free(original_ptr);
-	free(ft_ptr);
+    // Test 3: Zero size
+    result = ft_calloc(5, 0);
+    if (result == NULL)
+        printf("Test 3: ft_calloc(5, 0) - Passed\n");
+    else
+    {
+        printf("Test 3: ft_calloc(5, 0) - Failed\n");
+        free(result);
+    }
 
-	// Case 6: Memory contents comparison (normal case)
-	original_ptr = calloc(5, sizeof(int));
-	ft_ptr = ft_calloc(5, sizeof(int));
-	printf("Case 6: Memory content check\n");
-	printf("Original contents: ");
-	for (size_t i = 0; i < 5; i++) {
-		printf("%d ", ((int *)original_ptr)[i]);
-	}
-	printf("\nft_calloc contents: ");
-	for (size_t i = 0; i < 5; i++) {
-		printf("%d ", ((int *)ft_ptr)[i]);
-	}
-	printf("\n\n");
-	free(original_ptr);
-	free(ft_ptr);
+    // Test 4: Large allocation (likely to fail)
+    result = ft_calloc(SIZE_MAX, 2);
+    if (result == NULL)
+        printf("Test 4: ft_calloc(SIZE_MAX, 2) - Passed\n");
+    else
+    {
+        printf("Test 4: ft_calloc(SIZE_MAX, 2) - Failed\n");
+        free(result);
+    }
+
+    // Test 5: Check if memory is zeroed out
+    result = ft_calloc(10, sizeof(char));
+    if (result)
+    {
+        int zeroed = 1;
+        for (size_t i = 0; i < 10; i++)
+        {
+            if (((char *)result)[i] != 0)
+            {
+                zeroed = 0;
+                break;
+            }
+        }
+        if (zeroed)
+            printf("Test 5: ft_calloc(10, sizeof(char)) - Memory is zeroed out - Passed\n");
+        else
+            printf("Test 5: ft_calloc(10, sizeof(char)) - Memory is not zeroed out - Failed\n");
+        free(result);
+    }
+    else
+    {
+        printf("Test 5: ft_calloc(10, sizeof(char)) - Failed\n");
+    }
+
+    // Test 6: Small allocation
+    result = ft_calloc(1, sizeof(char));
+    if (result)
+    {
+        printf("Test 6: ft_calloc(1, sizeof(char)) - Passed\n");
+        free(result);
+    }
+    else
+    {
+        printf("Test 6: ft_calloc(1, sizeof(char)) - Failed\n");
+    }
+
+    // Test 7: Allocate a string and check contents
+    result = ft_calloc(6, sizeof(char));
+    if (result)
+    {
+        strcpy((char *)result, "Hello");
+        printf("Test 7: ft_calloc(6, sizeof(char)) - Contents: \"%s\" - Passed\n", (char *)result);
+        free(result);
+    }
+    else
+    {
+        printf("Test 7: ft_calloc(6, sizeof(char)) - Failed\n");
+    }
+
 
 	return (0);
 }

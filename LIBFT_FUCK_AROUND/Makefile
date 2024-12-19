@@ -6,7 +6,7 @@
 #    By: vpozniak <vpozniak@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/17 20:14:48 by vpozniak          #+#    #+#              #
-#    Updated: 2024/12/17 22:27:04 by vpozniak         ###   ########.fr        #
+#    Updated: 2024/12/18 10:20:58 by vpozniak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,24 +24,24 @@ ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c\
 ft_toupper
 OBJS = $(SRCS:.c=.o)
 
-AR = ar -rcsv
+AR = ar -rc
 
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(AR) $(NAME) $?
+	$(AR) $(NAME) $(OBJS)
 
 %.o : %.c
 	$(CC) -c $(CFLAGS) $< -o $@
 
 
 clean:
-	rm -f $(OBJ) $(OBJ_BONUS)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re

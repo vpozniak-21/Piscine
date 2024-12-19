@@ -6,7 +6,7 @@
 /*   By: vpozniak <vpozniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 20:25:12 by vpozniak          #+#    #+#             */
-/*   Updated: 2024/12/15 20:28:39 by vpozniak         ###   ########.fr       */
+/*   Updated: 2024/12/19 12:37:31 by vpozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,13 @@ void	ft_putendl_fd(char *s, int fd)
 	}
 	write(fd, "\n", 1);
 }
+/*
+int main() {
+    // Example 1: Write to standard output
+    ft_putendl_fd("Hello, world!", 1);
+
+    // Example 2: Write to standard error
+    ft_putendl_fd("This is an error message.", 2);
+
+    return 0;
+}*/

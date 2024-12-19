@@ -6,7 +6,7 @@
 /*   By: vpozniak <vpozniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 16:19:21 by vpozniak          #+#    #+#             */
-/*   Updated: 2024/12/13 18:30:14 by vpozniak         ###   ########.fr       */
+/*   Updated: 2024/12/18 15:40:48 by vpozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,31 +31,24 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	size_t	len;
 	char	*trimmed_str;
-	size_t	i;
 
-	if (!s1)
-		return (NULL);
-	if (ft_strlen(s1) == 0)
-		return (ft_strdup(""));
-	if (ft_strlen(set) == 0)
+	if (ft_strlen(s1) == 0 || ft_strlen(set) == 0)
 		return (ft_strdup((char *)s1));
 	start = 0;
 	while (is_the_same(s1[start], (char *)set))
 		start++;
 	end = ft_strlen(s1) - 1;
-	while (is_the_same(s1[end], (char *)set) && end < 0)
+	while (is_the_same(s1[end], (char *)set) && end > 0)
 		end--;
-	len = end - start + 1;
+	if (start > end)
+		len = 0;
+	else
+		len = end - start + 1;
 	trimmed_str = malloc(len + 1);
 	if (!trimmed_str)
 		return (NULL);
-	i = 0;
 	while (start <= end)
-	{
-		trimmed_str[i] = s1[start];
-		start++;
-		i++;
-	}
-	trimmed_str[i] = '\0';
-	return (trimmed_str);
+		*trimmed_str++ = s1[start++];
+	*trimmed_str = '\0';
+	return (trimmed_str - len);
 }

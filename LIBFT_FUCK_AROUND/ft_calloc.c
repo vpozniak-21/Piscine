@@ -6,15 +6,15 @@
 /*   By: vpozniak <vpozniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:53:51 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/12/17 12:45:46 by vpozniak         ###   ########.fr       */
+/*   Updated: 2024/12/18 10:34:11 by vpozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 /*
 size_t nmemb - the number of elements in the array;
 size_t size - the weight of each byte of each element within the array
 */
+#include <stdint.h>
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n);
